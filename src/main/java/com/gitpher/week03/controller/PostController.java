@@ -26,7 +26,7 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public List<Post> readPost() {
+    public List<com.gitpher.week03.domain.PostMapping> readPost() {
         LocalDateTime start = LocalDateTime.now().minusDays(1);
         LocalDateTime end = LocalDateTime.now();
         return postRepository.findAllByModifiedAtBetweenOrderByModifiedAtDesc(start, end);
